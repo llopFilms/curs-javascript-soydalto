@@ -28,3 +28,5 @@ console.log("salutacioConca -->", salutacioConca);
 let salutacioInterpol = `Bona tarda a tothom ${salutacio}`;
 console.log("salutacioInterpol -->", salutacioInterpol);
 
+let prova = 1;
+console.log("prova -->", prova);
