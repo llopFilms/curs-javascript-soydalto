@@ -1,4 +1,13 @@
 # Curs de Javascript de Dalto
 - Pràctiques del curs de Javascript de Dalto
 - Temari nivell júnior:
+    - Intro
+    - Etiqueta <script>
+    - Variables
+    - Tipus de dades
+    - Àmbit/scope (let, const)
+    - Operadors d'assignació i aritmètics
+    - Concatenació i inerpolació
+    - Backtits (` `) i escapament de " i de '
+    - Operadors lògics i de comparació
     - 
