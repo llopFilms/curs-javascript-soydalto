@@ -1,5 +1,6 @@
-console.log('Arxiu codi.js. Codi principal');
+console.log('***** Carregant 1-1-codi-intro.js ******');
 
+console.log("----- Tipus de dades -----");
 let string = 'cadena de text';
 let numero = 10;
 let booleaCert = true;
@@ -15,6 +16,7 @@ let resultat2 = -numero1;
 console.log("resultat -->", resultat);
 console.log("resultat2 -->", resultat2);
 
+console.log("----- Concatenació -----");
 let frase = "" + numero1 + numero2;
 console.log("frase -->", frase, typeof frase);
 
@@ -25,8 +27,6 @@ let salutacio3 = `Bona tarda a tothom`;
 let salutacioConca = salutacio + salutacio2 + salutacio3;
 console.log("salutacioConca -->", salutacioConca);
 
+console.log("----- Interpolació ------");
 let salutacioInterpol = `Bona tarda a tothom ${salutacio}`;
 console.log("salutacioInterpol -->", salutacioInterpol);
-
-let prova = 1;
-console.log("prova -->", prova);

@@ -1,6 +1,7 @@
 # Curs de Javascript de Dalto
 - Pràctiques del curs de Javascript de Dalto
-- Temari nivell júnior:
+- Temari nivell júnior
+- CAPÍTOL 1
     - Intro
     - Etiqueta <script>
     - Variables
@@ -10,4 +11,5 @@
     - Concatenació i inerpolació
     - Backtits (` `) i escapament de " i de '
     - Operadors lògics i de comparació
-    - 
+    - Condicionals
+    - Pràctica 'Cofia 1'
