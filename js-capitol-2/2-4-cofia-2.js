@@ -134,8 +134,8 @@ Alumne ${nomAlumne}: present(P) o absent(A)? ", "P"`
     nomAlumne = alumnes[i][0];
     let assistencies = alumnes[i][1];
     let absencies = dies - assistencies;
-    let percentatgeAssistencia = ((assistencies / dies) * 100);
-    console.log('hola',percentatgeAssistencia);
+    let percentatgeAssistencia = (assistencies / dies) * 100;
+    console.log('hola', percentatgeAssistencia);
     console.log(
       `
   Alumne: ${nomAlumne}
@@ -829,21 +829,18 @@ function controlAssistenciaRegistrat() {
     let assistencies = alumnes[i][1];
     let absencies = dies - assistencies;
     let percentatgeAssistencia = +((assistencies / dies) * 100).toFixed(2);
-    console.log(
-      `
-      Alumne: ${nomAlumne}
-      Asistències: ${assistencies}
-      Absències: ${absencies}`
-    );
+    console.log(`
+    Alumne: ${nomAlumne}
+    Asistències: ${assistencies}
+    Absències: ${absencies}
+    Percentatge assistència: ${percentatgeAssistencia}%.`);
 
     if (percentatgeAssistencia < 90) {
-      console.log(`
-      Percentatge assistència: ${percentatgeAssistencia}%.
-      No està admes al projecte final.`);
+      console.log(`     
+    --> ${nomAlumne} NO està admès/a al projecte final.`);
     } else {
       console.log(`
-      Percentatge assistència: ${percentatgeAssistencia}%.
-      Està admes al projecte final.`);
+    --> ${nomAlumne} SÍ està admès/a al projecte final.`);
     }
   }
 }
