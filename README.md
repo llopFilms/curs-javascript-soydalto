@@ -13,3 +13,19 @@
     - Operadors lògics i de comparació
     - Condicionals
     - Pràctica 'Cofia 1'
+- CAPÍTOL 2
+    - Arrays
+    - Arrays associatius / objectes
+    - Bucle while i do while
+    - break amb while
+    - Bucle for
+    - break amb for
+    - continue amb for
+    - for in
+    - for of
+    - label
+    - Declaració i crida de funcions
+    - return
+    - Paràmetres i arguments
+    - Funcions fletxa
+    - 
