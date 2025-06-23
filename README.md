@@ -12,7 +12,7 @@
     - Backtits (` `) i escapament de " i de '
     - Operadors lògics i de comparació
     - Condicionals
-    - Pràctica 'Cofia 1'
+    - Pràctica 'Cofla 1'
 - CAPÍTOL 2
     - Arrays
     - Arrays associatius / objectes
@@ -28,7 +28,7 @@
     - return
     - Paràmetres i arguments
     - Funcions fletxa
-    - Pràctica 'Cofia 2'
+    - Pràctica 'Cofla 2'
 - CAPÍTOL 3
     - Definició de POO
     - Classes
