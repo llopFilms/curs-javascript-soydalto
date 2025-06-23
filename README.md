@@ -28,4 +28,21 @@
     - return
     - Paràmetres i arguments
     - Funcions fletxa
-    - 
+    - Pràctica 'Cofia 2'
+- CAPÍTOL 3
+    - Definició de POO
+    - Classes
+    - Objectes
+    - Atributs / propietats
+    - Mètodes
+    - Consructor
+    - Instanciació
+    - Abstracció
+    - Modularitat
+    - Encapsulament
+    - Polimorfisme
+    - Herència
+    - Mètodes estàtics
+    - Propietats estàtiques
+    - getters
+    - setters

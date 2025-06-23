@@ -797,38 +797,39 @@ function controlAssistenciaRegistrat() {
   let alumnes = [];
 
   let nomAlumne, indexAlumne;
-  for (let index in inscrits) {
+  for (const index in inscrits) {
     nomAlumne = inscrits[index];
     alumnes[index] = [nomAlumne, 0];
   }
 
-  const verificarAssistencia = (nomAlumne, i) => {
-    for (let index in alumnes) {
+  const verificarAssistencia = (nomAlumne, indexDia) => {
+    for (const index in alumnes) {
       if (alumnes[index][0] === nomAlumne) {
         indexAlumne = index;
       }
     }
-    for (let registre of registreAssistencies[indexAlumne]) {
-      if (registre[i] === 'P') {
-        alumnes[indexAlumne][1]++;
-      }
+
+    if (registreAssistencies[indexAlumne][indexDia] === 'P') {
+      alumnes[indexAlumne][1]++;
     }
   };
 
-  for (let i = 0; i < dies; i++) {
-    for (let alumne of alumnes) {
+  for (let dia = 0; dia < dies; dia++) {
+    for (const alumne of alumnes) {
       nomAlumne = alumne[0];
-      verificarAssistencia(nomAlumne, i);
+      verificarAssistencia(nomAlumne, dia);
     }
   }
 
   console.log(alumnes);
 
+  let assistencies, absencies, percentatgeAssistencia;
+
   for (let i = 0; i < quantitatAlumnes; i++) {
-    let nomAlumne = alumnes[i][0];
-    let assistencies = alumnes[i][1];
-    let absencies = dies - assistencies;
-    let percentatgeAssistencia = +((assistencies / dies) * 100).toFixed(2);
+    nomAlumne = alumnes[i][0];
+    assistencies = alumnes[i][1];
+    absencies = dies - assistencies;
+    percentatgeAssistencia = +((assistencies / dies) * 100).toFixed(2);
     console.log(`
     Alumne: ${nomAlumne}
     Asistències: ${assistencies}
@@ -842,5 +843,49 @@ function controlAssistenciaRegistrat() {
       console.log(`
     --> ${nomAlumne} SÍ està admès/a al projecte final.`);
     }
+  }
+}
+
+console.log(`
+  
+Problema 3
+
+Quan arriba a casa Cofia té problemes de matemàtiques per resoldre. Crea una calculadora que:
+
+- Sumi
+- Resti
+- Multiplica
+- Divideix
+
+  `);
+
+function calculadora() {
+  
+  const suma = (num1, num2) => num1 + num2;
+  const resta = (num1, num2) => num1 - num2;
+  const multiplica = (num1, num2) => num1 * num2;
+  const divideix = (num1, num2) => {
+    if (num2 === 0) {
+      return 'No es pot dividir per zero';
+    }
+    return num1 / num2;
+  };
+
+  let num1 = Number(prompt('Introdueix el primer número: '));
+  let num2 = Number(prompt('Introdueix el segon número: '));
+  const operacio = prompt('Quina operació vols realitzar?', 's/r/m/d');
+
+  if (operacio === 's') {
+    console.log(`La suma de ${num1} i ${num2} és ${suma(num1, num2)}`);
+  } else if (operacio === 'r') {
+    console.log(`La resta de ${num1} i ${num2} és ${resta(num1, num2)}`);
+  } else if (operacio === 'm') {
+    console.log(
+      `La multiplicació de ${num1} i ${num2} és ${multiplica(num1, num2)}`
+    );
+  } else if (operacio === 'd') {
+    console.log(`La divisió de ${num1} i ${num2} és ${divideix(num1, num2)}`);
+  } else {
+    console.log('Operació no reconeguda');
   }
 }
