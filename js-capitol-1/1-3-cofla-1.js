@@ -1,7 +1,6 @@
 console.log('***** Carregant 1-3-cofia-1.js ******');
 
-console.log(
-  `
+console.log(`
 Problema 1
 
 3 nois de 23 anys perfectament normals entren a una geladeria a comprar un gelat però hi ha un problema: els preus no estan al costat de cada prestatge amb el gelat respectiu. Volen comprar el gelat més car que puguin amb els diners que tenen, de manera que veiem com podem ajudar-los.
@@ -27,8 +26,7 @@ CREAR SOLUCIONS:
 2. Si n'hi ha 2 o més amb el mateix preu, mostrar-los.
 3. En Cofia vol saber quant és el canvi.
 
-  `
-);
+  `);
 
 function definirGelat() {
   let dinersRobert = Number(prompt('Quants diners tens, Robert?', 1.5));
@@ -111,8 +109,7 @@ function definirGelat() {
   alert(respostaCofia);
 }
 
-console.log(
-  `
+console.log(`
 Problema 2
 
 Cofia dona 2.7€ a un que passava per allà. I aquest se'n va a comprar loteria. Cada bitllet costa 0.9€ 
@@ -122,8 +119,7 @@ Cofia dona 2.7€ a un que passava per allà. I aquest se'n va a comprar loteria
 - Si en té prou per comprar-ne més, en compra dos i regala el que sobra
 
 Determinar quants en compra i quant sobra
-  `
-);
+  `);
 
 function calculCompraLoteria() {
   let costBitlletLoteria = 0.9,
@@ -138,7 +134,9 @@ function calculCompraLoteria() {
   }
   console.log('numerodeBitllets -->', numerodeBitllets);
 
-  let canvi = Number((dinersCofia - numerodeBitllets * costBitlletLoteria).toFixed(1));
+  let canvi = Number(
+    (dinersCofia - numerodeBitllets * costBitlletLoteria).toFixed(1)
+  );
   console.log('canvi -->', canvi);
 
   if (
@@ -174,8 +172,7 @@ function calculCompraLoteria() {
   }
 }
 
-console.log(
-  `
+console.log(`
 Problema 3
 
 Hi ha 3 sospitosos d'haver robat un gelat a Cofia és un d'ells per suposat. Crear un programa per fer la comprovació del detector de mentides.
@@ -185,16 +182,28 @@ Hi ha 3 sospitosos d'haver robat un gelat a Cofia és un d'ells per suposat. Cre
   - Si diu que 'Sí', mostrar 'El sospitós ha robat el gelat'
   - Si diu que 'No', mostrar 'El sospitós no ha robat el gelat'
   - Si diu qualsevol altra cosa,mostrar 'Repetir la pregunta al sospitós'
+
   `);
 
 function detectordeMentides() {
-
-  let preguntaSospitos1 = prompt('El sospitós 1 ha de passar pel detector de mentides? S/N', 'S');
-  let preguntaSospitos2 = prompt('El sospitós 2 ha de passar pel detector de mentides? S/N', 'S');
-  let preguntaCofia = prompt('En Cofia ha de passar pel detector de mentides?S/N', 'S');
+  let preguntaSospitos1 = prompt(
+    'El sospitós 1 ha de passar pel detector de mentides? S/N',
+    'S'
+  );
+  let preguntaSospitos2 = prompt(
+    'El sospitós 2 ha de passar pel detector de mentides? S/N',
+    'S'
+  );
+  let preguntaCofia = prompt(
+    'En Cofia ha de passar pel detector de mentides?S/N',
+    'S'
+  );
 
   if (preguntaSospitos1 == 'S') {
-    let detectorMentidesSospitos1 = prompt('El sospitós 1 reconeix que ha robat el gelat? S/N', 'S');
+    let detectorMentidesSospitos1 = prompt(
+      'El sospitós 1 reconeix que ha robat el gelat? S/N',
+      'S'
+    );
     if (detectorMentidesSospitos1 == 'S') {
       alert('El sospitós 1 ha robat el gelat');
     } else if (detectorMentidesSospitos1 == 'N') {
@@ -205,7 +214,10 @@ function detectordeMentides() {
   }
 
   if (preguntaSospitos2 == 'S') {
-    let detectorMentidesSospitos2 = prompt('El sospitós 2 reconeix que ha robat el gelat? S/N', 'S');
+    let detectorMentidesSospitos2 = prompt(
+      'El sospitós 2 reconeix que ha robat el gelat? S/N',
+      'S'
+    );
     if (detectorMentidesSospitos2 == 'S') {
       alert('El sospitós 2 ha robat el gelat');
     } else if (detectorMentidesSospitos2 == 'N') {
@@ -216,7 +228,10 @@ function detectordeMentides() {
   }
 
   if (preguntaCofia == 'S') {
-    let detectorMentidesCofia = prompt('En Cofia reconeix que ha robat el gelat? S/N', 'S');
+    let detectorMentidesCofia = prompt(
+      'En Cofia reconeix que ha robat el gelat? S/N',
+      'S'
+    );
     if (detectorMentidesCofia == 'S') {
       alert('En Cofia ha robat el gelat');
     } else if (detectorMentidesCofia == 'N') {
@@ -225,5 +240,4 @@ function detectordeMentides() {
       alert('Repetir la pregunta a en Cofia');
     }
   }
-
 }

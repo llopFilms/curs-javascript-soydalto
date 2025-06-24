@@ -46,3 +46,6 @@
     - Propietats estàtiques
     - getters
     - setters
+    . Pràctica 'Cofla3'
+- CAPÍTOL 4
+    - 

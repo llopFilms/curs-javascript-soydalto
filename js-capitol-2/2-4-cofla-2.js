@@ -1,7 +1,6 @@
 console.log('***** Carregant 2-4-cofia-2.js ******');
 
-console.log(
-  `
+console.log(`
 Problema 1
 
 A un jove molt afortunat li toca la loteria, a quin en Cofia havia regalat els diners. I decideix fer una festa per cellebrar-ho. A la festa hi ha un control d'accés.
@@ -9,8 +8,7 @@ A un jove molt afortunat li toca la loteria, a quin en Cofia havia regalat els d
 - Deixar passar només als majors d'edat i l'entrada val 10€
 - La primera persona que pagui després de les 2.00h no paga
   
-  `
-);
+  `);
 
 function controldAcces() {
   let client1 = {
