@@ -14,10 +14,9 @@ const telefons = [];
 
 class Telefon {
   static #numTel = 1;
-  #id;
 
   constructor(color, pes, resPantalla, resCamara, memRam) {
-    this.#id = Telefon.#numTel++;
+    this.id = Telefon.#numTel++;
     this.color = color;
     this.pes = pes;
     this.resPantalla = resPantalla;
@@ -29,7 +28,7 @@ class Telefon {
   }
 
   getID() {
-    return this.#id;
+    return this.id;
   }
 
   static getSeguentID() {
@@ -202,36 +201,21 @@ En Cofla no està satisfet amb els telèfon normals i vol mirar ara els telèfon
 
   `);
 
-class TelefonAltaGamma extends Telefon {  
-  constructor(
-    color,
-    pes,
-    resPantalla,
-    resCamara,
-    memRam,
-    camLenta,
-    recFacial,
-    camExtra
-  ) {
+class TelefonAltaGamma extends Telefon {
+  constructor(color, pes, resPantalla, resCamara, memRam, resCamExtra) {
     super(color, pes, resPantalla, resCamara, memRam);
-    this.camLenta = camLenta;
-    this.recFacial = recFacial;
-    this.camExtra = camExtra;
+    this.resCamExtra = resCamExtra;
   }
 
   mostrarDetalls() {
     super.mostrarDetalls();
     console.log(`Detalls Alta Gamma telèfon ${this.getID()}:
-Càmera lenta: ${this.camLenta}
-Reconeicement facial: ${this.recFacial}
-Càmera extra: ${this.camExtra}
+Resolució càmera extra: ${this.resCamExtra}
 `);
   }
 
-
   activarCamLenta() {
     if (this.ences === true) {
-      this.camLenta = true;
       console.log(`Telèfon ${this.getID()} activat la càmera lenta.`);
     } else {
       console.log(`Telèfon ${this.getID()} no està encès.`);
@@ -240,7 +224,6 @@ Càmera extra: ${this.camExtra}
 
   desactivarCamLenta() {
     if (this.ences === true) {
-      this.camLenta = false;
       console.log(`Telèfon ${this.getID()} desactivat la càmera lenta.`);
     } else {
       console.log(`Telèfon ${this.getID()} no està encès.`);
@@ -249,7 +232,6 @@ Càmera extra: ${this.camExtra}
 
   activarRecFacial() {
     if (this.ences === true) {
-      this.recFacial = true;
       console.log(`Telèfon ${this.getID()} activat el reconeixement facial.`);
     } else {
       console.log(`Telèfon ${this.getID()} no està encès.`);
@@ -258,7 +240,6 @@ Càmera extra: ${this.camExtra}
 
   desactivarRecFacial() {
     if (this.ences === true) {
-      this.recFacial = false;
       console.log(
         `Telèfon ${this.getID()} desactivat el reconeixement facial.`
       );
@@ -275,9 +256,7 @@ function crearTelefonsGammaAlta() {
     '1080p',
     '4k',
     8,
-    true,
-    true,
-    true
+    'hd'
   );
   telefons[3] = telefon1AltaGamma1;
   const telefon2AltaGamma2 = new TelefonAltaGamma(
@@ -286,9 +265,7 @@ function crearTelefonsGammaAlta() {
     '720p',
     '1080p',
     4,
-    true,
-    true,
-    true
+    'full hd'
   );
   telefons[4] = telefon2AltaGamma2;
 
@@ -326,9 +303,159 @@ function crearTelefonsGammaAlta() {
   recompteMedia();
 
   console.log("--- Comprovant l'ID del següent telèfon d'alta gamma---");
-  console.log(
-    `El proper ID que s'assignaria seria: ${Telefon.getSeguentID()}`
-  );
+  console.log(`El proper ID que s'assignaria seria: ${Telefon.getSeguentID()}`);
 
   console.table(telefons);
+}
+
+console.log(`
+  
+Problema 3
+
+En Cofla ara vol baixar aplicacions al seu telèfon nou. Té pre-seleccionades 7 aplicacions, però només en vol instal·lar 2.
+
+- Crear un sistema que ajudi a en Cofla a seleccionar 2 jocs.
+- Les informacions dels jocs han de tenir: nom, quantitat de descàrregues i puntuació.
+- Els jocs s'han de poder instal·lar, desinstal·lar, iniciar i tancar.
+  `);
+
+class Joc {
+  static #numApp = 1;
+
+  constructor(nom, descarregues, puntuacio, pes) {
+    this.id = Joc.#numApp++;
+    this.nom = nom;
+    this.descarregues = descarregues;
+    this.puntuacio = puntuacio;
+    this.pes = pes;
+    this.installat = false;
+    this.iniciat = false;
+  }
+
+  getID() {
+    return this.id;
+  }
+
+  static getSeguentID() {
+    return Joc.#numApp;
+  }
+
+  installar() {
+    if (this.installat === false) {
+      this.installat = true;
+      console.log(`El joc ${this.nom} s'ha instal·lat correctament`);
+    } else console.log(`El joc ${this.nom} ja s'està instal·lat`);
+  }
+
+  desinstallar() {
+    if (this.installat === true) {
+      this.installat = false;
+      console.log(`El joc ${this.nom} s'ha desinstal·lat correctament`);
+    } else console.log(`El joc ${this.nom} ja s'està desinstal·lat`);
+  }
+
+  iniciar() {
+    if (this.iniciat === false && this.installat === true) {
+      this.iniciat = true;
+      console.log(`El joc ${this.nom} s'ha iniciat correctament`);
+    } else
+      console.log(
+        `El joc ${this.nom} no s'ha pogut inciar perquè ja estàva iniciat`
+      );
+  }
+
+  tancar() {
+    if (this.iniciat === true && this.installat === true) {
+      this.iniciat = false;
+      console.log(`El joc ${this.nom} s'ha tancat correctament`);
+    } else
+      console.log(
+        `El joc ${this.nom} no s'ha pogut tancar perquè ja estava tancat`
+      );
+  }
+
+  mostrarDetalls() {
+    console.log(`Destlls del joc ${this.getID()}:
+    - ID: ${this.id}
+    - Nom: ${this.nom}
+    - Descàrregues: ${this.descarregues} descàrregues
+    - Puntuació: ${this.puntuacio} punts
+    - Pes: ${this.pes} MB
+    `);
+  }
+}
+
+function crearJocsTelefon() {
+  const jocs = [];
+
+  const joc1 = new Joc('Minecraft', 700, 23.99, 100);
+  jocs[0] = joc1;
+  const joc2 = new Joc('Fortnite', 30000, 8.33, 200);
+  jocs[1] = joc2;
+  const joc3 = new Joc('Among Us', 200, 4.99, 350);
+  jocs[2] = joc3;
+  const joc4 = new Joc('Genshin Impact', 20000, 7.22, 125);
+  jocs[3] = joc4;
+  const joc5 = new Joc('Clash Royale', 500, 6.66, 450);
+  jocs[4] = joc5;
+  const joc6 = new Joc('Subway Surfers', 180, 4.68, 750);
+  jocs[5] = joc6;
+  const joc7 = new Joc('Call of Duty Mobile', 25000, 9.25, 150);
+  jocs[6] = joc7;
+
+  console.table(jocs);
+
+  console.log('\n--- Detalls del joc ---');
+  joc1.mostrarDetalls();
+  joc2.mostrarDetalls();
+  joc3.mostrarDetalls();
+  joc4.mostrarDetalls();
+  joc5.mostrarDetalls();
+  joc6.mostrarDetalls();
+  joc7.mostrarDetalls();
+
+  console.log(`--- Interacció amn joc 1 ---`);
+  joc1.installar();
+  joc1.iniciar();
+
+  console.log(`--- Interacció amn joc 2 ---`);
+  joc3.installar();
+  joc3.iniciar();
+  joc3.tancar();
+  joc3.desinstallar();
+
+  console.log(`--- Interacció amn joc 3 ---`);
+  joc5.installar();
+  joc5.desinstallar();
+
+  console.log(`--- Interacció amn joc 4 ---`);
+  joc7.installar();
+  joc7.desinstallar();
+
+  console.log(`--- Interacció amn joc 5 ---`);
+  joc2.installar();
+  joc2.iniciar();
+
+  console.log(`--- Interacció amn joc 6 --`);
+  joc6.installar();
+  joc6.iniciar();
+  joc6.tancar();
+  joc6.desinstallar();
+
+  console.log(`--- Interacció amn joc 7`);
+  joc7.installar();
+  joc7.iniciar();
+  joc7.tancar();
+  joc7.desinstallar();
+
+  console.log(`Els jocs intal·lats finalment són:`);
+  for (const joc of jocs) {
+    if (joc.installat === true) {
+      console.log(`- ${joc.nom}`);
+    }
+  }
+
+  console.log(`El proper joc tindria la ID número ${Joc.getSeguentID()}`);
+
+  console.table(jocs);
 }
