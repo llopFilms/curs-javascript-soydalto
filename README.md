@@ -48,4 +48,33 @@
     - setters
     . Pràctica 'Cofla3'
 - CAPÍTOL 4
-    - 
+    - Mètodes de cadena comuns
+        - concat()
+        - startsWith()
+        - endsWth()
+        - includes()
+        - indexOf()
+        - lastINdexOf()
+        - charAt()
+        - padStart()
+        - padEnd()
+        - repeat()
+        - split()
+        - join()
+        - substring()
+        - toLowerCase()
+        - toUpperCase()
+        - toString()
+        - trim()
+        - trimEnd()
+        - trimSart()
+    - Mètodes d'arrays
+        - pop()
+        - push()
+        - shift()
+        - unshift()
+        - reverse()
+        - sort()
+        - splice()
+        - slice()
+
