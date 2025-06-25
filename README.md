@@ -68,7 +68,7 @@
         - trim()
         - trimEnd()
         - trimSart()
-    - Mètodes d'arrays
+    - Mètodes d'arrays transformadors
         - pop()
         - push()
         - shift()
@@ -76,5 +76,27 @@
         - reverse()
         - sort()
         - splice()
+    - Mètodes s'arrays accessors
         - slice()
+        - join()
+        - indexOf()
+        - lastIndexOf()
+        - includes()
+    - Mètodes d'array de repetició
+        - filter()
+        - map()
+        - forEach()
+    - Objecte Map()
+        - sqrt()
+        - pow()
+        - cbrt()
+        - max()
+        - min()
+        - random()
+        - round()
+        - trunc()
+        - floor()
+        - ceil()
+    - Pràctica 'Cofla4'
+
 
