@@ -94,5 +94,5 @@ console.log("numRandom4 -->", numRandom4);
 const numRandom4Ceil = Math.ceil(numRandom4);
 console.log("numRandom4Ceil -->", numRandom4Ceil);
 
-const num1a100Ceil = Math.ceil(Math.random() * 100) + 1; 
+const num1a100Ceil = Math.ceil(Math.random() * 100); 
 console.log("num1a100Ceil -->", num1a100Ceil);
