@@ -204,7 +204,7 @@ function crearCalculadoraPlus() {
 
 console.log(`
   
-Prolblema 2
+Problema 2
 
 En Cofla està a punt de començar a la universitat i les 12 matèries del 1r curs tenen assignat un professor/a i tots els alumnes que s'hi han inscrit.
 
@@ -283,6 +283,10 @@ class ObjecteAssignatura {
     this.alumnes = [];
   }
 
+  getID() {
+    return this.id;
+  }
+
   afegirAlumne(alumne) {
     this.alumnes.push(alumne);
   }
@@ -308,63 +312,70 @@ ${this.getLlistaAlumnes().join('\n')}
 ${this.getLlistaAlumnes().filter((alumne) => alumne.includes('Cofla'))}
   `;
   }
+
+  toStringPepet() {
+    return `
+  - Assignatura: ${this.assignatura}
+  - Professor: ${this.professor}
+  - Alumnes: ${this.alumnes.length}
+${this.getLlistaAlumnes().filter((alumne) => alumne.includes('Pepet'))}
+    `;
+  }
 }
 
-function registreUniversitat() {
-  let registreUniversitat = [];
-
-  (function crearRegistreUniversitat() {
-    let professor;
-    for (const assignatura of assignatures) {
-      switch (assignatura) {
-        case 'Matemàtiques':
-          professor = professors[0];
-          break;
-        case 'Programació':
-          professor = professors[1];
-          break;
-        case 'Lògica':
-          professor = professors[1];
-          break;
-        case 'Blockchain':
-          professor = professors[3];
-          break;
-        case 'Bases de dades':
-          professor = professors[2];
-          break;
-        case 'Tecnologies web':
-          professor = professors[3];
-          break;
-        case 'Sistemes operatius':
-          professor = professors[5];
-          break;
-        case 'Programació orientada a objectes I':
-          professor = professors[4];
-          break;
-        case 'Programació orientada a objectes II':
-          professor = professors[2];
-          break;
-      }
-
-      let objecteAssignatura = new ObjecteAssignatura(assignatura, professor);
-
-      let numeroAlumnes = Math.floor(
-        Math.random() * (alumnes.length - 24) + 25
-      );
-
-      for (let i = 0; i < numeroAlumnes; i++) {
-        let alumne;
-        let alumnesAssignatura = objecteAssignatura.alumnes;
-        do {
-          alumne = alumnes[Math.floor(Math.random() * alumnes.length)];
-        } while (alumnesAssignatura.includes(alumne));
-        objecteAssignatura.afegirAlumne(alumne);
-      }
-      registreUniversitat.push(objecteAssignatura);
+let arrRegistreUniversitat = [];
+(function crearRegistreUniversitat() {
+  let professor;
+  for (const assignatura of assignatures) {
+    switch (assignatura) {
+      case 'Matemàtiques':
+        professor = professors[0];
+        break;
+      case 'Programació':
+        professor = professors[1];
+        break;
+      case 'Lògica':
+        professor = professors[1];
+        break;
+      case 'Blockchain':
+        professor = professors[3];
+        break;
+      case 'Bases de dades':
+        professor = professors[2];
+        break;
+      case 'Tecnologies web':
+        professor = professors[3];
+        break;
+      case 'Sistemes operatius':
+        professor = professors[5];
+        break;
+      case 'Programació orientada a objectes I':
+        professor = professors[4];
+        break;
+      case 'Programació orientada a objectes II':
+        professor = professors[2];
+        break;
     }
-  })();
-  console.table(registreUniversitat);
 
+    let objecteAssignatura = new ObjecteAssignatura(assignatura, professor);
+
+    let numeroAlumnes = Math.floor(Math.random() * (alumnes.length - 24) + 25);
+
+    for (let i = 0; i < numeroAlumnes; i++) {
+      let alumne;
+      let alumnesAssignatura = objecteAssignatura.alumnes;
+      do {
+        alumne = alumnes[Math.floor(Math.random() * alumnes.length)];
+      } while (alumnesAssignatura.includes(alumne));
+      objecteAssignatura.afegirAlumne(alumne);
+    }
+    arrRegistreUniversitat.push(objecteAssignatura);
+  }
+})();
+console.log('Registre Universitat');
+console.table(arrRegistreUniversitat);
+
+function registreUniversitat() {
   (function mostrarAssignatura() {
     let assignatura = prompt(`
   Quina assignatura vols consultar?
@@ -381,13 +392,13 @@ function registreUniversitat() {
 
     let indexAssignatura = assignatura - 1;
     console.log('--- Dades Assignatura sol·licitada ---');
-    console.log(registreUniversitat[indexAssignatura].toString());
+    console.log(arrRegistreUniversitat[indexAssignatura].toString());
   })();
 
   (function assignaturesCofla() {
     console.log('--- Assignatures Cofla inscrit ---');
     let i = 0;
-    for (const registre of registreUniversitat) {
+    for (const registre of arrRegistreUniversitat) {
       if (registre.alumnes.includes('Cofla Pintor')) {
         i++;
         console.log(registre.toStringBreu());
@@ -395,4 +406,65 @@ function registreUniversitat() {
     }
     console.log(`En Cofla està apuntat a ${i} assignatures.`);
   })();
+}
+
+console.log(`
+  
+  Problema 3
+
+  En Cofla ja ha vist les 9 matèries possibles però, el sistema per fer les inscripcions s'ha espatllat. El seu codi Pepet es vol inscriure a 3 assignatures com a oient.
+
+  - Crear una funció que pregunti a en Cofla a quines assignatures es vol inscriure.
+  - Si ja hi ha 30 alumnes, negar-li la inscripció.
+  - Si n'hi ha menys de 30, permetre-li la inscripció.
+
+  `);
+
+function inscripcioPepet() {
+  let nomsAssignaturesPepet = [];
+  let i = 0;
+  do {
+    let numAssignatura = prompt(`
+    Quina assignatura et vols apuntar, Pepet (${i} de 3)?
+      1. Matemàtiques
+      2. Programació
+      3. Lògica
+      4. Blockchain
+      5. Bases de dades
+      6. Tecnologies web
+      7. Sistemes operatius
+      8. Programació orientada a objectes I
+      9. Programació orientada a objectes II  
+    `);
+
+    const assignaturaPepet = arrRegistreUniversitat[numAssignatura - 1];
+    const nomAssignatura =
+      arrRegistreUniversitat[numAssignatura - 1].assignatura;
+    const arrAlumnesAssignatura =
+      arrRegistreUniversitat[numAssignatura - 1].alumnes;
+
+    if (
+      arrAlumnesAssignatura.length < 30 &&
+      !nomsAssignaturesPepet.includes(nomAssignatura)
+    ) {
+      console.log(
+        `Pepet es pot inscriure a l'assignatura ${nomAssignatura} perquè hi ha menys de 30 alumnes`
+      );
+      arrAlumnesAssignatura.push('Pepet Pintor');
+      nomsAssignaturesPepet.push(nomAssignatura);
+
+      console.log(
+        `Assignatura ${nomAssignatura}: ${assignaturaPepet.toStringPepet()}`
+      );
+      i++;
+    } else {
+      console.log(
+        `Pepet no es pot inscriure a lassignatura ${nomAssignatura} perquè ja hi ha ${arrAlumnesAssignatura.length} alumnes`
+      );
+    }
+  } while (i < 3);
+
+  console.log(
+    `Inscripcions Pepet acabades: ${nomsAssignaturesPepet.join(', ')}`
+  );
 }
