@@ -387,7 +387,7 @@ function registreUniversitat() {
   (function assignaturesCofla() {
     console.log('--- Assignatures Cofla inscrit ---');
     let i = 0;
-    for (let registre of registreUniversitat) {
+    for (const registre of registreUniversitat) {
       if (registre.alumnes.includes('Cofla Pintor')) {
         i++;
         console.log(registre.toStringBreu());
