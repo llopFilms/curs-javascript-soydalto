@@ -66,7 +66,7 @@ console.log('----- count() -----');
 })(); */
 
 function suma(num1, num2) {
-  console.count('Comptador d\'execucions');
+  console.count("Comptador d'execucions");
   console.log('Suma de', num1, '+', num2, '=', num1 + num2);
 }
 suma(3, 4);
@@ -99,22 +99,26 @@ console.log('console.log dins de grup 1, número 3');
 console.groupEnd();
 
 console.log('----- time() + timeEnd()-----');
-
-console.log('Incialitza el temporitzador per time():');
-console.time('Temporitzador per time()');
-console.log('Operació 1');
-console.log('Operació 2');
-console.log('Operació 3');
-console.timeEnd('Temporitzador per time()');
+function resta(num1, num2) {
+  console.log('Resta de', num1, '-', num2, '=', num1 - num2);
+}
+console.log('Incialitza el temporitzador per time() execució resta():');
+console.time('Temps execució totes les funcions resta()');  
+resta(10, 5);
+resta(20, 10);
+resta(30, 15);
+console.timeEnd('Temps execució totes les funcions resta()');
 
 console.log('----- timeLog()-----');
 
-console.log('Incialitza el temporitzador:');
-console.time('Temporitzador per timeLog()');
-console.timeLog('Temporitzador per timeLog()');
-console.log('Operació 1');
-console.timeLog('Temporitzador per timeLog()');
-console.log('Operació 2');
-console.timeLog('Temporitzador per timeLog()');
-console.log('Operació 3');
-console.timeEnd('Temporitzador per timeLog()');
+function multiplicacio (num1, num2) {
+  console.log('Multiplicació de', num1, 'x', num2, '=', num1 * num2);
+  console.timeLog('Temps execució multiplicacio()');
+}
+
+console.log('Incialitza el temporitzador per time() execució multiplicacio():');
+console.time('Temps execució multiplicacio()');
+multiplicacio(10, 5);
+multiplicacio(20, 10);
+multiplicacio(30, 15);
+console.timeEnd('Temps execució multiplicacio()');
