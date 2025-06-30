@@ -1,6 +1,7 @@
 # Curs de Javascript de Dalto
 - Pràctiques del curs de Javascript de Dalto
 - Temari nivell júnior
+
 - CAPÍTOL 1
     - Intro
     - Etiqueta <script>
@@ -13,6 +14,7 @@
     - Operadors lògics i de comparació
     - Condicionals
     - Pràctica 'Cofla 1'
+
 - CAPÍTOL 2
     - Arrays
     - Arrays associatius / objectes
@@ -29,6 +31,7 @@
     - Paràmetres i arguments
     - Funcions fletxa
     - Pràctica 'Cofla 2'
+
 - CAPÍTOL 3
     - Definició de POO
     - Classes
@@ -47,6 +50,7 @@
     - getters
     - setters
     . Pràctica 'Cofla3'
+
 - CAPÍTOL 4
     - Mètodes de cadena comuns
         - concat()
@@ -98,7 +102,22 @@
         - floor()
         - ceil()
     - Pràctica 'Cofla4'
+
 CAPíTOL 5
     - Mètodes de cònsola
+        - clear ()
+        - error()
+        - info()
+        - log()
+        - table()
+        - warn()
+        - count()
+        - countReset()
+        - group()
+        - groupEnd()
+        - groupCollapsed()
+        - time()
+        - timeEnd()
+        - timeLog()
 
 
