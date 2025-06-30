@@ -98,5 +98,7 @@
         - floor()
         - ceil()
     - Pràctica 'Cofla4'
+CAPíTOL 5
+    - Mètodes de cònsola
 
 

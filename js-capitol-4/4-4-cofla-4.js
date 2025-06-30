@@ -208,13 +208,7 @@ Problema 2
 
 En Cofla està a punt de començar a la universitat i les 12 matèries del 1r curs tenen assignat un professor/a i tots els alumnes que s'hi han inscrit.
 
-- Cal crear un registre que mostri de cada assignatura, tant el professor/a, com tot els alumnes inscrits.
-- Crear una funció que ens indiqui les dades d'en Cofla:
-  - A quantes asignatures està inscrit.
-  - Quines són.
-  - Qui és el pforessor/a de cada una.
-  - A quantes assignatures està inscrit.
-  
+- Cal crear un registre que mostri de cada assignatura, tant el professor/a, com tot els alumnes inscrits.  
   `);
 
 const assignatures = [
@@ -371,9 +365,19 @@ let arrRegistreUniversitat = [];
     }
     arrRegistreUniversitat.push(objecteAssignatura);
   }
+  console.log('Registre Universitat');
+  console.table(arrRegistreUniversitat);
 })();
-console.log('Registre Universitat');
-console.table(arrRegistreUniversitat);
+
+console.log(`
+Ara ens cal saber les dades d'en Cofla.
+
+- Crear una funció que ens indiqui les dades d'en Cofla:
+  - A quantes asignatures està inscrit.
+  - Quines són.
+  - Qui és el pforessor/a de cada una.
+  - A quantes assignatures està inscrit.
+  `);
 
 function registreUniversitat() {
   (function mostrarAssignatura() {
@@ -412,11 +416,11 @@ console.log(`
   
   Problema 3
 
-  En Cofla ja ha vist les 9 matèries possibles però, el sistema per fer les inscripcions s'ha espatllat. El seu codi Pepet es vol inscriure a 3 assignatures com a oient.
+  En Cofla ja ha vist les 9 matèries possibles però, el sistema per fer les inscripcions s'ha espatllat. El seu cosí Pepet es vol inscriure a 3 assignatures com a oient.
 
-  - Crear una funció que pregunti a en Cofla a quines assignatures es vol inscriure.
-  - Si ja hi ha 30 alumnes, negar-li la inscripció.
-  - Si n'hi ha menys de 30, permetre-li la inscripció.
+  - Crear una funció que pregunti a en Pepet a quines assignatures es vol inscriure:
+    - Si ja hi ha 30 alumnes, negar-li la inscripció.
+    - Si n'hi ha menys de 30, permetre-li la inscripció.
 
   `);
 
@@ -425,7 +429,7 @@ function inscripcioPepet() {
   let i = 0;
   do {
     let numAssignatura = prompt(`
-    Quina assignatura et vols apuntar, Pepet (${i} de 3)?
+      Quina assignatura et vols apuntar, Pepet (${i} de 3)?
       1. Matemàtiques
       2. Programació
       3. Lògica
@@ -435,36 +439,33 @@ function inscripcioPepet() {
       7. Sistemes operatius
       8. Programació orientada a objectes I
       9. Programació orientada a objectes II  
-    `);
+      `);
 
     const assignaturaPepet = arrRegistreUniversitat[numAssignatura - 1];
-    const nomAssignatura =
-      arrRegistreUniversitat[numAssignatura - 1].assignatura;
-    const arrAlumnesAssignatura =
-      arrRegistreUniversitat[numAssignatura - 1].alumnes;
+    const nomAssignatura = assignaturaPepet.assignatura;
+    const arrAlumnesAssignatura = assignaturaPepet.alumnes;
 
-    if (
-      arrAlumnesAssignatura.length < 30 &&
-      !nomsAssignaturesPepet.includes(nomAssignatura)
-    ) {
+    if (nomsAssignaturesPepet.includes(nomAssignatura)) {
+      console.log(`Pepet ja està inscrit a l'assignatura ${nomAssignatura}`);
+    } else if (arrAlumnesAssignatura.length > 30) {
+      console.log(
+        `Pepet no es pot inscriure a lassignatura ${nomAssignatura} perquè ja hi ha ${arrAlumnesAssignatura.length} alumnes`
+      );
+    } else {
       console.log(
         `Pepet es pot inscriure a l'assignatura ${nomAssignatura} perquè hi ha menys de 30 alumnes`
       );
       arrAlumnesAssignatura.push('Pepet Pintor');
       nomsAssignaturesPepet.push(nomAssignatura);
+      i++;
 
       console.log(
         `Assignatura ${nomAssignatura}: ${assignaturaPepet.toStringPepet()}`
-      );
-      i++;
-    } else {
-      console.log(
-        `Pepet no es pot inscriure a lassignatura ${nomAssignatura} perquè ja hi ha ${arrAlumnesAssignatura.length} alumnes`
       );
     }
   } while (i < 3);
 
   console.log(
-    `Inscripcions Pepet acabades: ${nomsAssignaturesPepet.join(', ')}`
+    `Inscripció Pepet completada. Assignatures: ${nomsAssignaturesPepet.join(', ')}`
   );
 }
