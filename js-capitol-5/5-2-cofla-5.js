@@ -265,8 +265,10 @@ class ResultatsAssignatura {
         : redStyle;
     const colorStyleNota =
       this.revisioNota() === 'Nota suficient' ? greenStyle : redStyle;
-    const colorStyleQualificacio = boldStyle + " " + (
-      this.qualificacio === 'APROVAT' ? greenStyle : redStyle);
+    const colorStyleQualificacio =
+      boldStyle +
+      ' ' +
+      (this.qualificacio === 'APROVAT' ? greenStyle : redStyle);
 
     console.log(
       "%cResultats de l'assignatura:%c %s",
@@ -346,7 +348,179 @@ function resultatsCofla() {
 
 console.log(`
   
-  Problema 3
+  Problema 2
 
-  
+  En Cofla no sap si se'n sortirà perquè no sap si tindrà temps per acabar els treballs. Necessitarà durant dues setmanes dedicar 8h al dia repartides de la següent manera:
+    - 24h per estudiar, que són 103m al dia
+    - 24h per fer treballs, que també són 103m al dia
+    - 56h de treballar, que són uns 240m al dia
+    - 8h de fer les coses de casa, que són 34,3m al dia
+
+  Cal:
+    - Organitzar les tasques diàriament
+    - Otorgar 10m de descans entre elles
+    - Fer servir la consola per mostrar-ho tot
+    - El temps dedicat a cada tasca no pot superar les 4h
   `);
+
+function distribucioFeina() {
+  const objDia = {
+    estudiar: 100,
+    treballar: 240,
+    ferTreballs: 100,
+    feinesDeCasa: 30,
+    descans: 15,
+  };
+
+  const objTotals = {
+    estudiar: 103 * 14,
+    treballar: 240 * 14,
+    ferTreballs: 103 * 14,
+    feinesDeCasa: 34.3 * 14,
+    descans: 10 * 14 * 3,
+  };
+
+  const objAcc = {
+    estudiar: 0,
+    treballar: 0,
+    ferTreballs: 0,
+    feinesDeCasa: 0,
+    descans: 0,
+  };
+
+  console.log('%c--- Distribució feina ---', 'font-weight:bold');
+
+  for (let i = 0; i < 14; i++) {
+    let dia = i + 1;
+    if (dia === 1) console.group('%c--- Inici setmana 1 ---', 'font-weight:bold');
+    if (dia === 8) console.group('%c--- Inici setmana 2 ---', 'font-weight:bold');
+    console.group(`%c-- Dia ${dia} --`, 'font-style: oblique; color: #ADD8E6');
+    objAcc.estudiar += objDia.estudiar;
+    console.log(
+      '%c- Estudiar: %c%sm',
+      'font-weight:normal',
+      'font-weight:bold;color:orange',
+      objAcc.estudiar
+    );
+    objAcc.descans += objDia.descans;
+    console.log(
+      '%c- Descans: %c%sm',
+      'font-weight:normal',
+      'font-weight:bold;color:orange',
+      objAcc.descans
+    );
+    objAcc.treballar += objDia.treballar;
+    console.log(
+      '%c- Treballar: %c%sm',
+      'font-weight:normal',
+      'font-weight:bold;color:orange',
+      objAcc.treballar
+    );
+    objAcc.descans += objDia.descans;
+    console.log(
+      '%c- Descans: %c%sm',
+      'font-weight:normal',
+      'font-weight:bold;color:orange',
+      objAcc.descans
+    );
+    objAcc.ferTreballs += objDia.ferTreballs;
+    console.log(
+      '%c- Fer treballs: %c%sm',
+      'font-weight:normal',
+      'font-weight:bold;color:orange',
+      objAcc.ferTreballs
+    );
+    objAcc.descans += objDia.descans;
+    console.log(
+      '%c- Descans: %c%sm',
+      'font-weight:normal',
+      'font-weight:bold;color:orange',
+      objAcc.descans
+    );
+    objAcc.feinesDeCasa += objDia.feinesDeCasa;
+    console.log(
+      '%c- Feines de casa: %c%sm',
+      'font-weight:normal',
+      'font-weight:bold;color:orange',
+      objAcc.feinesDeCasa
+    );
+    console.groupEnd();
+
+    if (dia === 7 || dia === 14) {
+      console.group('%c--- Resum de la setmana ---', 'font-weight:bold');
+      console.log(
+        '%c- Estudiat fins ara: %c%sm',
+        'font-weight:normal',
+        'font-weight:bold;color:yellow',
+        objAcc.estudiar
+      );
+      console.log(
+        '%c- Treballat fins ara: %c%sm',
+        'font-weight:normal',
+        'font-weight:bold;color:yellow',
+        objAcc.treballar
+      );
+      console.log(
+        '%c- Treballs fets fins ara: %c%sm',
+        'font-weight:normal',
+        'font-weight:bold;color:yellow',
+        objAcc.ferTreballs
+      );
+      console.log(
+        '%c- Feines de casa fetes fins ara: %c%sm',
+        'font-weight:normal',
+        'font-weight:bold;color:yellow',
+        objAcc.feinesDeCasa
+      );
+      console.log(
+        '%c- Descansat fins ara: %c%sm',
+        'font-weight:normal',
+        'font-weight:bold;color:yellow',
+        objAcc.descans
+      );
+      console.groupEnd();
+      console.groupEnd();
+    }
+  }
+  console.group('%c--- Resum final ---', 'font-weight:bold');
+  console.group("-- Dades --");
+  for (const propietat in objAcc) {
+    const propietatCapitalitzada =
+      propietat.charAt(0).toUpperCase() + propietat.slice(1);
+    const diferencia = Math.round(objTotals[propietat] - objAcc[propietat]);
+    if (objAcc[propietat] > objTotals[propietat]) {
+      console.log(
+        '%c-%s: %c%sm',
+        'font-weight:normal',
+        propietatCapitalitzada,
+        'font-weight:bold;color:red',
+        objAcc[propietat]
+      );
+      console.log(
+        '  Excés de%c %s: %c%sm',
+        'font-weight:bold',
+        propietat,
+        'font-weight:bold;color:orange',
+        diferencia * -1
+      );
+    } else {
+      console.log(
+        '%c-%s: %c%sm',
+        'font-weight:normal',
+        propietatCapitalitzada,
+        'font-weight:bold;color:green',
+        objAcc[propietat]
+        
+      );
+      console.log(
+        '  Defecte de%c %s: %c%sm',
+        'font-weight:bold',
+        propietat,
+        'font-weight:bold;color:violet',
+        diferencia
+      );
+    }
+  }
+  console.groupEnd();
+  console.groupEnd();
+}
