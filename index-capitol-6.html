@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico">
+    <title>Capítol 5</title>
+  </head>
+  <body>
+    <p id="paragraf1" class="paragraf-1">Paràgraf 1 creat per fer proves d'accés al DOM amb getElementById i TagName, incialment a veure com funciona.</p>
+    <p id="paragraf2" class="paragraf-2">Paràgraf 2 creat per fer proves d'accés al DOM amb getElementById i TagName. També per querySelector i All, ja que també té una classe.</p>
+    <label for="rangEdats">Input per fer setAttribute de input</label><input id="rangEdats"><br><br>
+    <label for="tipusColor">Input per fer fer getAttribute d'id i de type</label><br><input type="color" id="tipusColor"><br><br>
+    <label for="tipusPassword">Input per fer removeAttribute de placeholder</label><br><input type="password" id="tipusPassword" placeholder="sfwdfwwdfdwf">
+    <p id ="paragraf3">Paràgraf creat per veure el tema de contenteditable que per defecte li crea un tabindex</p>
+    <p id="paragraf4" hidden>Paràgraf creat expressament per jugar amb el tema del tabinx de manera específica</p>
+    <label for="inputJs">Input creat per accedir des de Js</label><input type="text" id="inputJs" value="Input accessible per Js"></input><br><br>
+    <label for="inputJsFile">Input file creat per generar un atribut accept</label><br><input type="file" id="inputJsFile"><br><br>
+    <form action="" id="formulari" data-enviaments="0">
+      <input type="text" value="Input del formulari"><br>
+      <input type="submit" value="Enviar des de dins del formulari">
+    </form>
+    <input type="submit" form="formulari" value="Enviar des de fora del formulari"></input><br><br>
+    <label for="inputJsPassword">Input password per fora del formulari</label><input id="inputJsPassword" type="password" minlength="8" placeholder="Escriu la contrasenya..." form="formulari" required><label for="inputJsPassword">(Camp obligatori)</label>
+
+    <script>
+      'use strict';
+    </script>
+    <script src="js-capitol-6/6-1-dom.js"></script>
+  </body>
+</html>
