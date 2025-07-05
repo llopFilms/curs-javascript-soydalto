@@ -175,21 +175,24 @@
   - innerHMTL
   - outerHTML
   - createElement()
+  - createTextNode()
+  - appenchild()
+  - after()
+  - before()
+  - 
   - createDocumentFragment()
 - Mètodes de selecció de fills:
-  - firtsChild
+  - firstChild
   - lastChild
   - firstElementChild
   - lastElementChild
   - childNodes
   - children
 - Mètodes de fills:
-  - appenchild()
-  - after()
-  - before()
   - replaceChild()
   - removeChild()
   - hasChildNodes()
+  - cloneNodes()
 - Mètodes de selecció de pares:
   - parentElement
   - parentNode
