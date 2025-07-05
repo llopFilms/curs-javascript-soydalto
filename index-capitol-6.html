@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="favicon.ico">
     <title>Capítol 5</title>
+    <style>
+      .verd {
+        color: olive;
+      }
+      </style>
   </head>
   <body>
+    <h3>Mètodes d'accés al DOM</h3>
     <p id="paragraf1" class="paragraf-1">Paràgraf 1 creat per fer proves d'accés al DOM amb getElementById i TagName, incialment a veure com funciona.</p>
     <p id="paragraf2" class="paragraf-2">Paràgraf 2 creat per fer proves d'accés al DOM amb getElementById i TagName. També per querySelector i All, ja que també té una classe.</p>
     <label for="rangEdats">Input per fer setAttribute de input</label><input id="rangEdats"><br><br>
@@ -14,18 +20,37 @@
     <label for="tipusPassword">Input per fer removeAttribute de placeholder</label><br><input type="password" id="tipusPassword" placeholder="sfwdfwwdfdwf">
     <p id ="paragraf3">Paràgraf creat per veure el tema de contenteditable que per defecte li crea un tabindex</p>
     <p id="paragraf4" hidden>Paràgraf creat expressament per jugar amb el tema del tabinx de manera específica</p>
-    <label for="inputJs">Input creat per accedir des de Js</label><input type="text" id="inputJs" value="Input accessible per Js"></input><br><br>
+    <label for="inputJs">Input creat per accedir des de Js</label><input type="text" id="inputJs" value="Input accessible per Js"><br><br>
     <label for="inputJsFile">Input file creat per generar un atribut accept</label><br><input type="file" id="inputJsFile"><br><br>
     <form action="" id="formulari" data-enviaments="0">
       <input type="text" value="Input del formulari"><br>
       <input type="submit" value="Enviar des de dins del formulari">
     </form>
     <input type="submit" form="formulari" value="Enviar des de fora del formulari"></input><br><br>
-    <label for="inputJsPassword">Input password per fora del formulari</label><input id="inputJsPassword" type="password" minlength="8" placeholder="Escriu la contrasenya..." form="formulari" required><label for="inputJsPassword">(Camp obligatori)</label>
+    <label for="inputJsPassword">Input password per fora del formulari</label><input id="inputJsPassword" type="password" minlength="8" placeholder="Escriu la contrasenya..." form="formulari" required><label for="inputJsPassword">(Camp obligatori)</label><br>
+
+    <hr>
+
+    <h3 class="titol-2 subtitol">Mètodes de classes</h3>
+    <button onclick="afegirVerd()">Afegir verd</button>
+    <button onclick="treureVerd()">Treure verd</button>
+    <button onclick="toggleVerd()">Toggle verd</button>
+    
+    <hr>
+
+    <h3 class="titol-2 subtitol">Mètodes d'elements <span>interessants</span></h3>
+    <button onclick="canviarText()">Canviar text</button>
+    <button onclick="crearParagraf()">Crear paragraf</button>
+    <button onclick="afegirParagraf()">Afegir paràgraf</button>
+
+    <div class="ultim-text"></div>
 
     <script>
       'use strict';
     </script>
-    <script src="js-capitol-6/6-1-dom.js"></script>
+    <!-- <script src="js-capitol-6/6-1-dom.js"></script> -->
+    <!-- <script src="js-capitol-6/6-2-dom-classes.js"></script> -->
+    <script src="js-capitol-6/6-3-dom-elements.js"></script>
   </body>
 </html>
+

@@ -35,9 +35,10 @@ console.log('id tipusColor -->', tipusColor.getAttribute('id'));
 console.log('type tipusColor -->', tipusColor.getAttribute('type'));
 
 console.log('----- removeAttribute() -----');
-const tipusPassword = document.querySelector('#tipusPassword'); console.log("tipusPassword -->", tipusPassword);
+const tipusPassword = document.querySelector('#tipusPassword');
+console.log('tipusPassword -->', tipusPassword);
 tipusPassword.removeAttribute('placeholder');
-console.log("tipusPassword -->", tipusPassword);
+console.log('tipusPassword -->', tipusPassword);
 
 console.log('----- contenteditable -----');
 const paragraf3 = document.querySelector('#paragraf3');
@@ -51,7 +52,7 @@ console.log('paragraf4 hidden -->', paragraf4);
 paragraf4.removeAttribute('hidden');
 console.log('paragraf4 -->', paragraf4);
 
-console.log(('----- tabindex -----'));
+console.log('----- tabindex -----');
 paragraf4.setAttribute('tabindex', '0');
 console.log('paragraf4 -->', paragraf4);
 
@@ -59,7 +60,13 @@ console.log('--- title -----');
 paragraf4.setAttribute('title', 'Paràgraf 4');
 console.log('paragraf4 -->', paragraf4);
 
-console.log(('----- className -----'));
+console.log('----- style -----');
+const titol = document.querySelector('h3');
+console.log('titol -->', titol);
+titol.style.color = 'red';
+console.log('titol -->', titol);
+
+console.log('----- className -----');
 const inputJs = document.querySelector('#inputJs');
 console.log('inputJs -->', inputJs);
 inputJs.className = 'input-Js';
@@ -81,26 +88,28 @@ console.log('inputJsFile -->', inputJsFile.accept);
 
 console.log('----- form -----');
 const formulari = document.querySelector('#formulari');
-console.log("formulari -->", formulari);
+console.log('formulari -->', formulari);
 
 const incrementarEnviaments = () => {
   let enviaments = formulari.getAttribute('data-enviaments');
   enviaments++;
   formulari.setAttribute('data-enviaments', enviaments);
-}
+};
 
 formulari.addEventListener('submit', function (e) {
+  console.log("clicat submit formulari");
   e.preventDefault();
   incrementarEnviaments();
   console.log('Enviaments -->', formulari.dataset.enviaments);
   console.log('Submit des de dins del formulari');
-  console.log('Dades input formulari -->', formulari[0].value);
-
+  console.log('Dades input formulari -->', formulari[1].value);
 });
-const botoForm = document.querySelector('button');
+
+const botoForm = document.querySelectorAll('input[type="submit"]')[1];
 botoForm.addEventListener('click', function (e) {
   e.preventDefault();
   incrementarEnviaments();
+  console.log(e.submitter);
   console.log('Enviaments -->', formulari.dataset.enviaments);
   console.log('Submit des de fora del formulari');
   console.log('Dades input formulari -->', formulari.elements[0].value);
@@ -108,37 +117,17 @@ botoForm.addEventListener('click', function (e) {
 
 console.log('----- minlength -----');
 const contrasenya = document.querySelectorAll('input[type="password"]')[1];
-console.log("contrasenya tipus -->", contrasenya.type);
+console.log('contrasenya tipus -->', contrasenya.type);
 console.log('contrasenya minlength -->', contrasenya.minLength);
 
 console.log('----- placeholder -----');
-console.log("contrasenya placeholder -->", contrasenya.placeholder);
+console.log('contrasenya placeholder -->', contrasenya.placeholder);
 
-console.log('--- labels -----');
-console.log("contrasenya etiqueta 1 -->",contrasenya.labels[0].textContent);
-console.log("contrasenya etiqueta 2-->", contrasenya.labels[1].textContent);
+console.log('----- labels -----');
+console.log('contrasenya etiqueta 1 -->', contrasenya.labels[0].textContent);
+console.log('contrasenya etiqueta 2-->', contrasenya.labels[1].textContent);
 
-console.log('--- requried -----');
+console.log('----- requried -----');
 const inputJsPassword = document.querySelector('#inputJsPassword');
 console.log('inputJsPassword -->', inputJsPassword);
 console.log('inputJsPassword -->', inputJsPassword.required);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
