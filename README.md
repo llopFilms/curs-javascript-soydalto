@@ -5,7 +5,6 @@
 ## Temari nivell júnior
 
 ### CAPÍTOL 1
-
 - Intro
 - Etiqueta <script>
 - Variables
@@ -19,7 +18,6 @@
 - Pràctica 'Cofla 1'
 
 ### CAPÍTOL 2
-
 - Arrays
 - Arrays associatius / objectes
 - Bucle while i do while
@@ -37,7 +35,6 @@
 - Pràctica 'Cofla 2'
 
 ### CAPÍTOL 3
-
 - Definició de POO
 - Classes
 - Objectes
@@ -57,7 +54,6 @@
 - Pràctica 'Cofla3'
 
 ### CAPÍTOL 4
-
 - Mètodes de cadena comuns
   - concat()
   - startsWith()
@@ -110,7 +106,6 @@
 - Pràctica 'Cofla4'
 
 ### CAPíTOL 5
-
 - Mètodes de consola
   - clear ()
   - error()
@@ -128,7 +123,6 @@
   - timeLog()
 
 ### CAPÍTOL 6
-
 - Nodes
 - Document
 - Element
@@ -179,7 +173,7 @@
   - appenchild()
   - after()
   - before()
-  - 
+  - insertBefore()
   - createDocumentFragment()
 - Mètodes de selecció de fills:
   - firstChild
@@ -203,3 +197,26 @@
   - previousElementSibling
 - Altres
   - closest()
+
+## Temari nivell mid
+
+### CAPÍTOL 1
+- Intro
+- Objecte window:
+  - open()
+  - close()
+  - closed
+  - name
+  - location
+  - navigator
+  - stop()
+  - alert()
+  - prompt()
+  - confirm()
+  - print()
+  - screen
+  - screenLeft
+  - screenTop
+  - scrollX
+  - scrollY
+  - scroll()
