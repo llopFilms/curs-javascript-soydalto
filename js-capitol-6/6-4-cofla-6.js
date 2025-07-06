@@ -105,7 +105,9 @@ function clausCofla() {
 
       descripcioClau.addEventListener('click', () => {
         descripcioClau.classList.toggle('active');
-        document.querySelector('#dadesClau').value = `Marca: ${clau.marca} Model: ${clau.model} Preu: ${clau.preu}`;
+        const dadesClau = `Marca: ${clau.marca} Model: ${clau.model} Preu: ${clau.preu}`;
+        console.log('dadesClau -->', dadesClau);
+        document.querySelector('#dadesClau').value = dadesClau;
       });
     }
     fragment.appendChild(llistaClaus);
@@ -117,6 +119,8 @@ function clausCofla() {
     formulari.addEventListener('submit', (event) => {
       event.preventDefault();
       const dadesClau = document.querySelector('#dadesClau').value;
+      console.log('dadesClau -->', dadesClau);
+
       alert(dadesClau);
     });
   })();
