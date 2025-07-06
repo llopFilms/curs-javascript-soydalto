@@ -9,6 +9,38 @@
       .verd {
         color: olive;
       }
+
+      .llista-claus {
+        display: flex;   
+        flex-wrap: wrap;
+        gap: 15px; 
+      }
+
+      .descripcio-clau {
+        border: 1px solid black;
+        padding: 10px;
+
+        &:hover, &.active {
+          background-color: #ccc;
+        }
+      }
+
+      .detalls-clau {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding-left: 10px;
+      }
+
+      .detall {
+        margin-left: 25px;
+      }
+
+      .imatge {
+        display: block;
+        min-height: 200px;
+      }
+
       </style>
   </head>
   <body>
@@ -42,6 +74,19 @@
     <button onclick="canviarText()">Canviar text</button>
 
     <div class="contenidor">** Contenidor de la llista **</div>
+
+    <hr>
+    <h3>Problema claus Cofla</h3>
+<button onclick="clausCofla()">Claus Cofla</button>
+    <div class="contenidor-problema-1">
+      <div class="contenidor-llista"></div>
+      <form action="" id="formulari-cofla">
+        <input type="text" id="dadesClau" data-dades="data-dades" hidden>
+        <input type="submit" name="dades" value="Enviar">
+      </form>
+
+
+    </div>
 
     <script>
       'use strict';
