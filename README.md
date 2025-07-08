@@ -200,7 +200,7 @@
 
 ## Temari nivell mid
 
-### CAPÍTOL 1
+### CAPÍTOL 7
 - Intro
 - Objecte window:
   - open()
@@ -220,3 +220,14 @@
   - scrollX
   - scrollY
   - scroll()
+
+### CAPÍTOL 8
+  - Eines de desenvolupament del navegador Firefox
+  - Pestanya Inspector
+  - Pestanya Consola
+  - Pestanya Depurador
+  - Pestanya Xarxa
+  - Pestanya Editor d'estils
+  - Pestanya Rendiment
+
+### CAPÍTOL 8

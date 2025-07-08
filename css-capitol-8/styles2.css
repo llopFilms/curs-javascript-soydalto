@@ -1,0 +1,30 @@
+body {
+  color: #222;
+  font-family: sans-serif;
+}
+
+div {
+  background: #000;
+  padding: 35px;
+}
+
+h2 {
+  color: #fff;
+}
+
+p {
+  color: #ccc;
+}
+
+.titol {
+  color: rgb(153, 234, 153);
+}
+
+html body div p:nth-child(2) {
+  color: rgb(188, 171, 221);
+}
+
+body > div:nth-child(1) > p:nth-child(3) {
+  color: rgb(229, 186, 106);
+}
+
