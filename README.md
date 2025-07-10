@@ -230,4 +230,5 @@
   - Pestanya Editor d'estils
   - Pestanya Rendiment
 
-### CAPÍTOL 8
+### CAPÍTOL 9
+  - 
