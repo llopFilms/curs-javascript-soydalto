@@ -5,7 +5,7 @@
 ## Temari nivell júnior
 
 ### CAPÍTOL 1
-- Intro
+
 - Etiqueta <script>
 - Variables
 - Tipus de dades
@@ -18,6 +18,7 @@
 - Pràctica 'Cofla 1'
 
 ### CAPÍTOL 2
+
 - Arrays
 - Arrays associatius / objectes
 - Bucle while i do while
@@ -35,6 +36,7 @@
 - Pràctica 'Cofla 2'
 
 ### CAPÍTOL 3
+
 - Definició de POO
 - Classes
 - Objectes
@@ -54,6 +56,7 @@
 - Pràctica 'Cofla3'
 
 ### CAPÍTOL 4
+
 - Mètodes de cadena comuns
   - concat()
   - startsWith()
@@ -106,6 +109,7 @@
 - Pràctica 'Cofla4'
 
 ### CAPíTOL 5
+
 - Mètodes de consola
   - clear ()
   - error()
@@ -123,6 +127,7 @@
   - timeLog()
 
 ### CAPÍTOL 6
+
 - Nodes
 - Document
 - Element
@@ -201,7 +206,7 @@
 ## Temari nivell mid
 
 ### CAPÍTOL 7
-- Intro
+
 - Objecte window:
   - open()
   - close()
@@ -222,13 +227,46 @@
   - scroll()
 
 ### CAPÍTOL 8
-  - Eines de desenvolupament del navegador Firefox
-  - Pestanya Inspector
-  - Pestanya Consola
-  - Pestanya Depurador
-  - Pestanya Xarxa
-  - Pestanya Editor d'estils
-  - Pestanya Rendiment
+
+- Eines de desenvolupament del navegador Firefox
+- Pestanya Inspector
+- Pestanya Consola
+- Pestanya Depurador
+- Pestanya Xarxa
+- Pestanya Editor d'estils
+- Pestanya Rendiment
 
 ### CAPÍTOL 9
-  - 
+
+- Esdeveniments
+- eventHandlers
+- addEventListener()
+- removeEventListener()
+- L'objete Event
+- Event bubbling
+- Event capturing
+- stopPropagation()
+- Esdeveniments del mouse:
+  - click
+  - dblclick
+  - mouseover
+  - mouseout
+  - contextmenu
+- Esdeveniments del teclat:
+  - keydown
+  - keypress
+  - keyup
+- Esdeveniments de la pantalla:
+  - error
+  - load
+  - beforeunload
+  - unload
+  - resize
+  - scroll
+  - select
+  - selectionchange
+- Temporitzadors
+  - setTimeout()
+  - setInterval()
+  - clearTimeout()
+  - clearInterval()
