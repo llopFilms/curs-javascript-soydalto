@@ -1,0 +1,94 @@
+.contenidor-formulari {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+
+  form {
+    padding: 30px;
+    background-color: #013;
+    color: #faebd7;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #faebd7;
+  }
+
+  label {
+    border-bottom: 1px solid #faebd7;
+    display: flex;
+    flex-direction: column;
+  }
+
+  input,
+  textarea {
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 10px;
+    color: #faebd7;
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input:hover,
+  textarea:hover {
+    background-color: #26a;
+  }
+
+  input[type='submit'] {
+    margin-top: 20px;
+    align-self: center;
+    width: 60%;
+    cursor: pointer;
+    background-color: #26a;
+  }
+
+  #resultat {
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .validat {
+    color: #4bc41a;
+  }
+
+  .no-validat {
+    color: #ff3232;
+  }
+}
+
+.contenidor-taula {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 60px;
+  grid-template-columns: repeat(4, minmax(min-content, max-content));
+  grid-auto-rows: 60px;
+
+  .item {
+    padding: 15px 20px;
+    background-color: #013;
+    color: #faebd7;
+  }
+
+  .boto-confirmar {
+    padding: 10px;
+    align-self: center;
+    cursor: pointer;
+    background-color: #26a;
+    color: #faebd7;
+  }
+}

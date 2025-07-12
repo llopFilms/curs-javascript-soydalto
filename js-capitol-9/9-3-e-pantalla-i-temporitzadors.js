@@ -52,3 +52,27 @@ document.addEventListener('selectionchange', () => {
   console.log('----- selectionchange -----');
   console.log('Has seleccionat text al document');
 });
+
+const temporitzador = setTimeout(() => {
+  console.log('----- setTimeout -----');
+  console.log('S\'ha executat el temporitzador');
+}, 1000);
+
+setTimeout(() => {
+  console.log('----- clearTimeout -----');
+  console.log('Has cancelat el temporitzador');
+  clearTimeout(temporitzador);
+}, 2000);
+
+const interval = setInterval(() => {
+  console.log('----- setInterval -----');
+  console.count('S\'ha executat l\'interval');
+}, 1000);
+
+setTimeout(() => {
+  console.log('----- clearInterval -----');
+  console.log('Has cancelat l\'interval');
+  clearInterval(interval);
+}, 3100);
+
+
