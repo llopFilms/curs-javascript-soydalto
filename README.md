@@ -270,3 +270,10 @@
   - setInterval()
   - clearTimeout()
   - clearInterval()
+
+### CAPÍTOL 10
+  - Control de flux
+  - Àmbit de bloc
+  - Sentències de control de flux condicional
+  - Sentències de control de flux amb switch
+  - Sentències de maneig d'excepcions

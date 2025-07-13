@@ -81,7 +81,12 @@ console.log(`
   
   Problema 2
 
+  Els alumnes han escollit una assignatura però cal que escullin la taula on volen seure.
 
+  - Crea una taula amb les assignatures de la classe i els alumnes que els volen seure.
+  - Confirmar el registre de les dades.
+  - Enviar el formulari
+  - Impedir que es pugui canviar el contingut de la taula
 
 
   `);
@@ -150,9 +155,15 @@ for (const alumne of alumnes) {
 const botoConfirmar = document.querySelector('.boto-confirmar');
 botoConfirmar.insertAdjacentHTML('beforebegin', codiHTML);
 
-botoConfirmar.addEventListener('click', () => {
+const gestionarTaules = () => {
+  let confirmacio = confirm('Estàs segur de confirmar el registre?');
+  if (!confirmacio) return;
   const TaulesEscollides = document.querySelectorAll('.taula-escollida');
   for (const taula of TaulesEscollides) {
     taula.outerHTML = `Taula ${taula.value}`;
   }
-});
+  botoConfirmar.removeEventListener('click', gestionarTaules);
+  botoConfirmar.remove();
+};
+
+botoConfirmar.addEventListener('click', gestionarTaules);
