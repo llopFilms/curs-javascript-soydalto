@@ -277,3 +277,12 @@
   - Sentències de control de flux condicional
   - Sentències de control de flux amb switch
   - Sentències de maneig d'excepcions
+
+### CAPÍTOL 11
+
+- Codi obsolet:
+  - Deprecated
+  - Funcions inexistents o a punt de ser-ho
+  - Excessiu ús de recursos
+- Verifiació codi obsolet:
+  - 
