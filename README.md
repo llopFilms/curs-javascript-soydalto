@@ -284,5 +284,18 @@
   - Deprecated
   - Funcions inexistents o a punt de ser-ho
   - Excessiu ús de recursos
-- Verifiació codi obsolet:
-  - 
+- Verifiació codi obsolet
+
+
+### CAPÍTOL 12
+
+  - Callbacks
+  - Promeses
+  - new Promise()
+  - then()
+  - catch()
+  - finally()
+
+### CAPÍTOL 13
+
+- 

@@ -1,0 +1,33 @@
+.contenidor-qualificacions {
+  font-family: sans-serif;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .qualificacions {
+    display: flex;
+    flex-direction: column;
+
+    .qualificacio {
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+
+      .assignatura {
+        background-color: #eee;
+        padding: 10px;
+        flex: 1 1 90%;
+      }
+
+      .qualificacio {
+        padding: 10px;
+        font-size: 90%;
+        display: block;
+        text-align: center;
+        flex: 1 1 10%;
+        background-color: #ddd;
+      }
+    }
+  }
+}
