@@ -286,16 +286,29 @@
   - Excessiu ús de recursos
 - Verifiació codi obsolet
 
-
 ### CAPÍTOL 12
 
-  - Callbacks
-  - Promeses
-  - new Promise()
-  - then()
-  - catch()
-  - finally()
+- Callbacks
+- Promeses
+- new Promise()
+- then()
+- catch()
+- finally()
 
 ### CAPÍTOL 13
 
-- 
+- Peticions HTTP
+- Dades JSON
+- stringify()
+- parse()
+- Peticions Ajax
+- XMLHttpRequest()
+- readyState
+- status
+- load
+- fecth()
+- text()
+- json()
+- blob()
+- axios
+
