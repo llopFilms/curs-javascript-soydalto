@@ -311,4 +311,5 @@
 - json()
 - blob()
 - axios
+- async/await
 
